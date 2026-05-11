@@ -33,6 +33,17 @@ figures-inline/
 # Photo assets — not used by the prospectus (logos only)
 assets/photos/
 
+# Bundled Claude Design artefacts and extraction helpers (not deployed)
+FEMH Funding Priorities Menu Tabs.html
+BETTER FEMH Funding Priorities.html
+_extract_bundle.py
+_bundle_extracted/
+MENU-CONTENT.md
+MENU-CONTENT_AH.md
+
+# Content exports for the user's personal wiki (not deployed)
+PROSPECTUS-CONTENT.md
+
 # wrangler files
 .wrangler
 .dev.vars*

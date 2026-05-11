@@ -151,8 +151,17 @@
 </section>
 
 <!-- =========================================================================
-     Project map
+     Project map (folder-drawer)
      ========================================================================= -->
+<!-- SVG filter: rough-edge for the "Translation Outcomes" ink stamp -->
+<svg width="0" height="0" aria-hidden="true" class="svg-defs">
+  <defs>
+    <filter id="femh-ink-rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="5" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6"></feDisplacementMap>
+    </filter>
+  </defs>
+</svg>
 <section class="map-band" id="map">
   <div class="container">
     <div class="map-head">
@@ -172,172 +181,373 @@
       </div>
     </div>
 
-    <div class="map-grid" id="mapGrid">
-      <a href="#project-01" class="tile" data-tags="mood children">
-        <div class="tile-num">01</div>
-        <h3 class="tile-title">Postnatal depression</h3>
-        <p class="tile-focus">Alloparenting-informed antenatal and postnatal materials for mothers, partners and family.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$100K</b> pilot · 2–5 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-02" class="tile" data-tags="cross-cutting">
-        <div class="tile-num">02</div>
-        <h3 class="tile-title">GP and first-line psychoeducation</h3>
-        <p class="tile-focus">Cross-disorder reframing in primary care. Trial-tested evolutionary explanations.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$200K</b> pilot · 2–4 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-03" class="tile" data-tags="neurodiversity community">
-        <div class="tile-num">03</div>
-        <h3 class="tile-title">Neurodiversity in schools, workplaces and prisons</h3>
-        <p class="tile-focus">ADHD, autism, dyslexia. Two-track training programme rooted in adaptive trade-offs.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$75K</b> pilot · 2–7 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-04" class="tile" data-tags="community">
-        <div class="tile-num">04</div>
-        <h3 class="tile-title">Workplaces as tribes</h3>
-        <p class="tile-focus">Workplace wellbeing. Reigniting ancestral community spirit and collaboration.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$100K</b> pilot · 2–5 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-05" class="tile" data-tags="mood community">
-        <div class="tile-num">05</div>
-        <h3 class="tile-title">Co-living and community rituals</h3>
-        <p class="tile-focus">Loneliness, depression, anxiety. Structured weekly programmes in co-housing.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$50K</b> pilot · 2–4 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-06" class="tile" data-tags="cross-cutting mood">
-        <div class="tile-num">06</div>
-        <h3 class="tile-title">Mismatch reduction therapy</h3>
-        <p class="tile-focus">Trans-diagnostic; depression primary. A new manualised therapy.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$300K</b> pilot · 3–6 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-07" class="tile" data-tags="anxiety">
-        <div class="tile-num">07</div>
-        <h3 class="tile-title">Facing anxiety disorders</h3>
-        <p class="tile-focus">Anxiety disorders. Smoke-detector framing to raise exposure-therapy uptake.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$100K</b> pilot · 2–4 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-08" class="tile" data-tags="children">
-        <div class="tile-num">08</div>
-        <h3 class="tile-title">Rechannelling eating disorders</h3>
-        <p class="tile-focus">Anorexia, bulimia. Rechannelling perfectionism as a recovery engine.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$100K</b> pilot · 3–5 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-09" class="tile" data-tags="cross-cutting">
-        <div class="tile-num">09</div>
-        <h3 class="tile-title">Recalibrating addiction</h3>
-        <p class="tile-focus">Substance and behavioural addiction. Hijacked-reward framing for therapy and CPD.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$200K</b> pilot · 3–5 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-10" class="tile" data-tags="mood">
-        <div class="tile-num">10</div>
-        <h3 class="tile-title">Depression triage</h3>
-        <p class="tile-focus">Evolution-informed intake and routing in primary care and before.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$400K</b> pilot · 3–6 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-11" class="tile" data-tags="anxiety">
-        <div class="tile-num">11</div>
-        <h3 class="tile-title">Post-traumatic stress disorder</h3>
-        <p class="tile-focus">PTSD. Evolution-informed psychoeducation as adjunct to existing trauma therapies.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$200K</b> pilot · 2–5 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-12" class="tile" data-tags="children mood">
-        <div class="tile-num">12</div>
-        <h3 class="tile-title">Suicidal adolescence</h3>
-        <p class="tile-focus">Adolescent self-harm and suicide. RCT of evolution-informed family mediation in CAMHS.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$100K</b> pilot · 2–4 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-13" class="tile" data-tags="neurodiversity cross-cutting">
-        <div class="tile-num">13</div>
-        <h3 class="tile-title">Spectrum strengths</h3>
-        <p class="tile-focus">Cross-disorder; trait research. Detecting adaptive trade-offs across diagnoses.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$100K</b> pilot · 2–3 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-14" class="tile" data-tags="cross-cutting">
-        <div class="tile-num">14</div>
-        <h3 class="tile-title">Enhanced phenotyping</h3>
-        <p class="tile-focus">Cross-disorder; foundational measurement. Evolution-informed scales and digital-phenotyping beyond the questionnaire.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$300K</b> pilot · 3–5 yr</div>
-          <div class="tile-arrow">Read →</div>
-        </div>
-      </a>
-      <a href="#project-15" class="tile" data-tags="cross-cutting">
-        <div class="tile-num">15</div>
-        <h3 class="tile-title">Cross-cultural studies in subsistence societies</h3>
-        <p class="tile-focus">Foundational psychiatric epidemiology in hunter-gatherer and forager-horticulturist populations.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$200K</b> pilot · 3–10 yr</div>
-          <div class="tile-arrow">Read →</div>
+    <div class="drawer" id="drawer">
+
+      <a class="folder folder--project tab-o1" href="#project-01" data-tags="mood children">
+        <div class="folder-tab"><span class="num">01</span><span class="cat">Mood</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Postnatal depression</h3>
+            <div class="folder-meta"><span class="cost">$100K pilot</span><span class="dot"></span><span class="term">2–5 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A multi-site RCT testing whether evolution-informed antenatal and postnatal materials — framing parenting as inherently communal — prevents and relieves postnatal depression by encouraging social support and engagement.</p>
+            <ul>
+              <li>Alloparenting psychoeducation in routine antenatal care</li>
+              <li>Peer-alloparenting networks via maternity services</li>
+              <li>Open materials for global health systems</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 7deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
         </div>
       </a>
 
-      <div class="map-divider" data-tags="people"><span class="line"></span><span class="text">Person-focussed</span><span class="line"></span></div>
+      <a class="folder folder--project tab-o3" href="#project-02" data-tags="cross-cutting">
+        <div class="folder-tab"><span class="num">02</span><span class="cat">Cross-cutting</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">GP and first-line psychoeducation</h3>
+            <div class="folder-meta"><span class="cost">$200K pilot</span><span class="dot"></span><span class="term">2–4 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A multi-arm primary-care RCT training GPs in evolutionary explanations of common mental disorders with patient leaflets and videos that reduce self-stigma and encourage engagement at first contact.</p>
+            <ul>
+              <li>CPD-certified evolutionary psychoeducation for GPs</li>
+              <li>Multilingual patient leaflets, videos, QR-code resources</li>
+              <li>Adoption into mainstream clinical curricula</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 10deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
 
-      <a href="#project-A" class="tile is-person" data-tags="people">
-        <div class="tile-num">A</div>
-        <h3 class="tile-title">Student small grants</h3>
-        <p class="tile-focus">Cross-disorder. Rolling pool of up to $7,000 grants for graduate students worldwide.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>Max $7K</b> / grant · ~25/yr</div>
-          <div class="tile-arrow">Read →</div>
+      <a class="folder folder--project tab-o5" href="#project-03" data-tags="neurodiversity community">
+        <div class="folder-tab"><span class="num">03</span><span class="cat">Neurodiversity</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Neurodiversity in schools, workplaces and prisons</h3>
+            <div class="folder-meta"><span class="cost">$75K pilot</span><span class="dot"></span><span class="term">2–7 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A two-track training programme reframing neurodivergent traits as adaptive trade-offs — for staff and for neurodivergent individuals themselves — across schools, workplaces, and prisons.</p>
+            <ul>
+              <li>MHFA-style certification for HR, teachers, prison officers</li>
+              <li>Evolution-informed content in school curricula</li>
+              <li>'Find your niche' prison rehabilitation programme</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 13deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
         </div>
       </a>
-      <a href="#project-B" class="tile is-person" data-tags="people">
-        <div class="tile-num">B</div>
-        <h3 class="tile-title">Research visits</h3>
-        <p class="tile-focus">Career development. One- to twelve-month visiting fellowships at evolutionary-psychiatry labs.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$3K–$50K</b> / visit · 1–12 mo</div>
-          <div class="tile-arrow">Read →</div>
+
+      <a class="folder folder--project tab-o2" href="#project-04" data-tags="community">
+        <div class="folder-tab"><span class="num">04</span><span class="cat">Community</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Workplaces as tribes</h3>
+            <div class="folder-meta"><span class="cost">$100K pilot</span><span class="dot"></span><span class="term">2–5 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A pilot in small and medium businesses reintroducing ancestral cooperation elements — shared food, ritual, transparent decisions, autonomy — and measuring wellness, engagement, sick days, and turnover.</p>
+            <ul>
+              <li>Per-employee culture-building service for businesses</li>
+              <li>Manager and HR training in evolutionary community principles</li>
+              <li>Local provider network plugged into workplaces</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 9deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
         </div>
       </a>
-      <a href="#project-C" class="tile is-person" data-tags="people">
-        <div class="tile-num">C</div>
-        <h3 class="tile-title">PhD and postdoctoral training</h3>
-        <p class="tile-focus">Field building. Fully-funded studentships and fellowships embedded in existing labs.</p>
-        <div class="tile-foot">
-          <div class="tile-cost"><b>$200K</b> / fellowship · 3–6 yr</div>
-          <div class="tile-arrow">Read →</div>
+
+      <a class="folder folder--project tab-o6" href="#project-05" data-tags="mood community">
+        <div class="folder-tab"><span class="num">05</span><span class="cat">Community</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Co-living and community rituals</h3>
+            <div class="folder-meta"><span class="cost">$50K pilot</span><span class="dot"></span><span class="term">2–4 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>We've lost neighbourly connection. A randomised trial introducing structured weekly community rituals — shared meals, singing, low-stakes activity, check-ins — in co-housing space and apartment blocks.</p>
+            <ul>
+              <li>Subscription ritual modules for co-housing operators</li>
+              <li>App facilitation for neighbourhoods without coordinators</li>
+              <li>Bespoke variants for older-adult, family, student housing</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 12deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
         </div>
       </a>
+
+      <a class="folder folder--project tab-o1" href="#project-06" data-tags="cross-cutting mood">
+        <div class="folder-tab"><span class="num">06</span><span class="cat">Cross-cutting</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Mismatch reduction therapy</h3>
+            <div class="folder-meta"><span class="cost">$300K pilot</span><span class="dot"></span><span class="term">3–6 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A new manualised therapy targeting evolutionary mismatch across physical activity, community contact, food sharing, sunlight, and meaningful achievement, in both course and residential-retreat formats.</p>
+            <ul>
+              <li>Certification for therapists and health workers</li>
+              <li>International franchise of retreat centres</li>
+              <li>Self-help app referenced by NHS, NIMH</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 8deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o4" href="#project-07" data-tags="anxiety">
+        <div class="folder-tab"><span class="num">07</span><span class="cat">Anxiety</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Facing anxiety disorders</h3>
+            <div class="folder-meta"><span class="cost">$100K pilot</span><span class="dot"></span><span class="term">2–4 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>An RCT testing whether smoke-detector and evolutionary framing, delivered before and during exposure-based therapy, raises uptake, completion, and long-term outcomes for anxiety disorders.</p>
+            <ul>
+              <li>Patient video and leaflet resources, globally translated</li>
+              <li>Free first-line app referenced by NHS, NIMH</li>
+              <li>Standard psychoeducation in every anxiety protocol</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 11deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o2" href="#project-08" data-tags="children">
+        <div class="folder-tab"><span class="num">08</span><span class="cat">Children</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Rechannelling eating disorders</h3>
+            <div class="folder-meta"><span class="cost">$100K pilot</span><span class="dot"></span><span class="term">3–5 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A pilot RCT integrating evolution-informed psychoeducation into adolescent anorexia treatment, helping patients rechannel adaptive perfectionism and conscientiousness into alternative outlets.</p>
+            <ul>
+              <li>Evolution-informed CPD for ED specialists</li>
+              <li>Reframing materials in standard ED services</li>
+              <li>Peer networks built around rechannelling perfectionism</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 7deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o5" href="#project-09" data-tags="cross-cutting">
+        <div class="folder-tab"><span class="num">09</span><span class="cat">Cross-cutting</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Recalibrating addiction</h3>
+            <div class="folder-meta"><span class="cost">$200K pilot</span><span class="dot"></span><span class="term">3–5 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>An enhanced addiction therapy plus clinician CPD course, framing substance and behavioural addictions as hijacked ancestral reward systems and measuring stigma reduction.</p>
+            <ul>
+              <li>Clinician certification with stigma-reduction measurement</li>
+              <li>Public materials on substances and healthy tech use</li>
+              <li>Therapy targeting the motivational compass</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 10deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o3" href="#project-10" data-tags="mood">
+        <div class="folder-tab"><span class="num">10</span><span class="cat">Mood</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Depression triage</h3>
+            <div class="folder-meta"><span class="cost">$400K pilot</span><span class="dot"></span><span class="term">3–6 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A primary-care triage system that routes depression patients to interventions matching their evolutionary subtype — loneliness, hierarchy conflict, romantic loss, post-partum, season, and others.</p>
+            <ul>
+              <li>Validated triage tools in GP depression workflow</li>
+              <li>Free consumer app matching people to local services</li>
+              <li>Evolutionary risk profile in primary-care records</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 13deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o6" href="#project-11" data-tags="anxiety">
+        <div class="folder-tab"><span class="num">11</span><span class="cat">Anxiety</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Post-traumatic stress disorder</h3>
+            <div class="folder-meta"><span class="cost">$200K pilot</span><span class="dot"></span><span class="term">2–5 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>Two add-on modules — evolutionary psychoeducation and community-ritual sessions modelled on small-scale societies — enhancing existing trauma-focussed therapies for veterans, refugees, and survivors.</p>
+            <ul>
+              <li>Evolutionary psychoeducation in all PTSD pathways</li>
+              <li>Group ritual protocols re-introduced as standard responses</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 9deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o1" href="#project-12" data-tags="children mood">
+        <div class="folder-tab"><span class="num">12</span><span class="cat">Children</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Suicidal adolescence</h3>
+            <div class="folder-meta"><span class="cost">$100K pilot</span><span class="dot"></span><span class="term">2–4 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>An RCT of evolution-informed family mediation, treating adolescent self-harm and suicide as costly bargaining signals when conflict with authority cannot otherwise be resolved.</p>
+            <ul>
+              <li>Clinician CPD in family mediation</li>
+              <li>Free online mediation guides for parents</li>
+              <li>Conflict-resolution programmes for school safeguarding</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 12deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o4" href="#project-13" data-tags="neurodiversity cross-cutting">
+        <div class="folder-tab"><span class="num">13</span><span class="cat">Neurodiversity</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Spectrum strengths</h3>
+            <div class="folder-meta"><span class="cost">$100K pilot</span><span class="dot"></span><span class="term">2–3 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A two-arm research programme detecting adaptive trade-off strengths across psychiatric diagnoses — in clinical and family samples, and in genotyped biobank cohorts via polygenic scores.</p>
+            <ul>
+              <li>Strengths-identification service for schools and employers</li>
+              <li>Open trait–condition–strength reference dataset</li>
+              <li>Self-knowledge reports in standard developmental assessment</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 8deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o2" href="#project-14" data-tags="cross-cutting">
+        <div class="folder-tab"><span class="num">14</span><span class="cat">Cross-cutting</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Enhanced phenotyping</h3>
+            <div class="folder-meta"><span class="cost">$300K pilot</span><span class="dot"></span><span class="term">3–5 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>An applied programme building evolution-informed scales and digital-phenotyping protocols, identifying which measurement streams from smartphones and wearables most predict mental-health outcomes.</p>
+            <ul>
+              <li>Validated evolution-informed scales and phenotyping protocols</li>
+              <li>Enhanced phenotyping used in clinics, schools and workplaces</li>
+              <li>Mental-health scoring in iOS, Android health apps</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 11deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--project tab-o5" href="#project-15" data-tags="cross-cutting">
+        <div class="folder-tab"><span class="num">15</span><span class="cat">Cross-cutting</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Cross-cultural studies in hunter-gatherer and subsistence societies</h3>
+            <div class="folder-meta"><span class="cost">$200K pilot</span><span class="dot"></span><span class="term">3–10 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A multi-site programme embedding researchers with the Hadza, Tsimané, Mbendjele BaYaka, Aka, Turkana and others to build the first small-scale cross-cultural psychiatric epidemiology dataset.</p>
+            <ul>
+              <li>First dataset of psychiatric epidemiology in subsistence societies</li>
+              <li>Culturally adapted assessments for LMIC and indigenous research</li>
+              <li>Healing-ritual insights feeding mismatch therapies</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 7deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <div class="band" data-tags="people">
+        <span class="band-tape">Person-focussed</span>
+        <span class="band-rule"></span>
+        <span class="band-note">3 funding routes</span>
+      </div>
+
+      <a class="folder folder--person tab-o2" href="#project-A" data-tags="people">
+        <div class="folder-tab"><span class="num">A</span><span class="cat">Researcher</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Student small grants</h3>
+            <div class="folder-meta"><span class="cost">Max $7K / grant</span><span class="dot"></span><span class="term">≤ 1 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>A rolling pool of up to $7,000 seed grants letting graduate students across anthropology, psychology, public health, and the clinical sciences pilot evolution-informed projects worldwide.</p>
+            <ul>
+              <li>Empirical work beyond existing datasets and theory</li>
+              <li>Pilot data anchoring future grants and jobs</li>
+              <li>Mentor connections with FEMH advisory board</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 10deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--person tab-o4" href="#project-B" data-tags="people">
+        <div class="folder-tab"><span class="num">B</span><span class="cat">Researcher</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">Research visits</h3>
+            <div class="folder-meta"><span class="cost">$3K–$50K / visit</span><span class="dot"></span><span class="term">1–12 mo</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>One- to twelve-month visiting fellowships at universities hosting working evolutionary-psychiatry researchers, giving early-career visitors methods training and collaboration unavailable at home.</p>
+            <ul>
+              <li>Methods and collaboration outside home institution</li>
+              <li>Returning visitors seed the field at new universities</li>
+              <li>Co-supervision with leading evolutionary-psychiatry PIs</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 13deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
+      <a class="folder folder--person tab-o6" href="#project-C" data-tags="people">
+        <div class="folder-tab"><span class="num">C</span><span class="cat">Researcher</span></div>
+        <div class="folder-body">
+          <div class="folder-row">
+            <h3 class="folder-title">PhD and postdoctoral training</h3>
+            <div class="folder-meta"><span class="cost">$200K / fellowship</span><span class="dot"></span><span class="term">3–6 yr</span></div>
+          </div>
+          <div class="folder-expand-divider"></div>
+          <div class="folder-expand"><div class="folder-expand-clip"><div class="folder-expand-inner">
+            <p>Fully-funded studentships and postdoctoral fellowships embedded in existing labs, co-supervised by FEMH advisory-board members where local evolutionary expertise is absent.</p>
+            <ul>
+              <li>Credentials for permanent lab-leader positions</li>
+              <li>Decades of downstream research and training output</li>
+              <li>Evolutionary thinking embedded in faculty roles</li>
+            </ul>
+            <div class="stamp" aria-hidden="true" style="--stamp-rot: 9deg;"><span>Translation</span><span>Outcomes</span></div>
+          </div></div></div>
+        </div>
+      </a>
+
     </div>
 
     <div class="no-results" id="noResults">

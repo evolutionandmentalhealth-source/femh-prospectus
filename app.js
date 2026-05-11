@@ -1,6 +1,7 @@
 /* FEMH Project File — interactive layer
    --------------------------------------------------
-   - Filter chips: filter map tiles + project cards
+   - Filter chips: filter map folders + project cards
+   - Folder drawer: hover-to-expand (desktop), tap-to-expand (touch)
    - Menu overlay: open / close, focus trap-lite
    - Sticky nav: shadow on scroll
    - Back-to-map: appears once user is past the map
@@ -64,11 +65,11 @@
     });
   }
 
-  /* ----- Filter chips ----- */
+  /* ----- Filter chips (folder drawer) ----- */
   const chips = Array.from(document.querySelectorAll('.chip'));
-  const tiles = Array.from(document.querySelectorAll('.tile'));
+  const folders = Array.from(document.querySelectorAll('.folder'));
   const cards = Array.from(document.querySelectorAll('.project-card'));
-  const dividers = Array.from(document.querySelectorAll('.map-divider'));
+  const bands = Array.from(document.querySelectorAll('.band'));
   const noResults = document.getElementById('noResults');
 
   const matches = (el, filter) => {
@@ -77,41 +78,45 @@
     return tags.includes(filter);
   };
 
-  /* Populate chip counts dynamically from tile data-tags. */
+  /* Populate chip counts dynamically from folder data-tags. */
   chips.forEach((chip) => {
     const slot = chip.querySelector('[data-chip-count]');
     if (!slot) return;
     const filter = chip.dataset.filter;
-    const count = tiles.filter((t) => matches(t, filter)).length;
+    const count = folders.filter((f) => matches(f, filter)).length;
     slot.textContent = count;
   });
 
   const applyFilter = (filter) => {
-    let visibleTiles = 0;
+    let visibleFolders = 0;
 
-    tiles.forEach((tile) => {
-      const show = matches(tile, filter);
-      tile.classList.toggle('is-hidden', !show);
-      if (show) visibleTiles++;
+    folders.forEach((folder) => {
+      const show = matches(folder, filter);
+      folder.classList.toggle('is-out', !show);
+      if (show) visibleFolders++;
     });
 
     cards.forEach((card) => {
       card.classList.toggle('is-hidden', !matches(card, filter));
     });
 
-    // Map divider for person-focussed: hide unless 'all' or 'people'
-    dividers.forEach((d) => {
+    // Person-focussed "tape" band: only meaningful when at least one person folder shows.
+    bands.forEach((band) => {
       const show = (filter === 'all' || filter === 'people');
-      d.style.display = show ? '' : 'none';
+      band.classList.toggle('is-out', !show);
     });
 
     // Empty state
     if (noResults) {
-      noResults.classList.toggle('is-visible', visibleTiles === 0);
+      noResults.classList.toggle('is-visible', visibleFolders === 0);
     }
 
     // Update chip active state
-    chips.forEach((c) => c.classList.toggle('is-active', c.dataset.filter === filter));
+    chips.forEach((c) => {
+      const isActive = c.dataset.filter === filter;
+      c.classList.toggle('is-active', isActive);
+      c.setAttribute('aria-pressed', String(isActive));
+    });
 
     // Stash on history for shareable URLs
     try {
@@ -135,6 +140,31 @@
     }
   } catch (_) { /* no-op */ }
 
+  /* ----- Folder tap-to-expand on touch devices -----
+     Desktop hover already opens folders. On touch (no hover) the first tap
+     should reveal the description/bullets; the second tap navigates to the
+     full project card. Detect via matchMedia(hover: none). */
+  const isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  if (isTouch) {
+    folders.forEach((folder) => {
+      folder.addEventListener('click', (e) => {
+        if (!folder.classList.contains('is-open')) {
+          e.preventDefault();
+          // Close any other open folder
+          folders.forEach((f) => { if (f !== folder) f.classList.remove('is-open'); });
+          folder.classList.add('is-open');
+        }
+        // else: let the click navigate to #project-XX
+      });
+    });
+    // Tap outside any folder closes everything.
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.folder')) {
+        folders.forEach((f) => f.classList.remove('is-open'));
+      }
+    });
+  }
+
   /* ----- Back to map button ----- */
   const backBtn = document.getElementById('backToMap');
   const map = document.getElementById('map');
@@ -153,14 +183,14 @@
     update();
   }
 
-  /* ----- Tile keyboard accessibility (Enter / Space) -----
+  /* ----- Folder keyboard accessibility (Enter / Space) -----
      <a> elements already work with Enter; this just makes sure
-     space-bar press behaves like a click on tiles. */
-  tiles.forEach((tile) => {
-    tile.addEventListener('keydown', (e) => {
+     space-bar press behaves like a click on folders. */
+  folders.forEach((folder) => {
+    folder.addEventListener('keydown', (e) => {
       if (e.key === ' ') {
         e.preventDefault();
-        tile.click();
+        folder.click();
       }
     });
   });
