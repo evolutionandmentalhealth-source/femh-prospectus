@@ -1856,7 +1856,7 @@ p:last-child { margin-bottom: 0; }
   height: var(--tab-h);
   min-width: 0;
   padding: 0 14px;
-  background: #E6BE93;
+  background: #EDDCC0;
   color: var(--femh-ink);
   font-family: var(--font-serif);
   font-weight: 600;
@@ -2123,7 +2123,7 @@ p:last-child { margin-bottom: 0; }
    Person-focussed tabs keep their existing teal hover for contrast. */
 .folder--project:hover .folder-tab,
 .folder--project.is-open .folder-tab {
-  background: #D1A371;
+  background: #DDC59E;
   color: var(--femh-ink);
 }
 .folder--person:hover .folder-tab,
