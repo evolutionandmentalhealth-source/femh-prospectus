@@ -698,7 +698,11 @@ p:last-child { margin-bottom: 0; }
 /* --------------------------------------------------------------------------
    Project map — index of all 17
    -------------------------------------------------------------------------- */
-.map-band { background: var(--femh-cream); padding: var(--space-10) 0; }
+/* White canvas behind the drawer — gives the cream folder bodies enough
+   contrast to read as distinct objects rather than blending into the page.
+   The nav above is already translucent-white, so the top of the page reads
+   as a single uncluttered surface. */
+.map-band { background: var(--femh-white); padding: var(--space-10) 0; }
 .map-head {
   display: flex;
   flex-direction: column;
