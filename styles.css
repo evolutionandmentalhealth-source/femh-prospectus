@@ -423,8 +423,28 @@ p:last-child { margin-bottom: 0; }
   }
   .nav-name span.nav-line2 { display: block; }
   .nav-link { display: none; }
-  .nav-cta { padding: 8px 14px; font-size: 11px; }
+  /* The DONATE pill crowds the brand block at <720px. Hide it from the top
+     nav and surface it inside the menu overlay instead (see #menuOverlay). */
+  .nav-cta { display: none; }
 }
+
+/* Donate CTA inside the mobile menu overlay (only meaningful at <720px since
+   the overlay opens via the menu button, which is mobile-only behaviour). */
+.menu-donate {
+  display: inline-block;
+  margin-top: var(--space-5);
+  padding: 12px 22px;
+  background: var(--femh-forest);
+  color: var(--femh-cream);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: var(--radius-2);
+  transition: background var(--dur-fast) var(--ease-standard);
+}
+.menu-donate:hover { background: var(--femh-ink); color: var(--femh-cream); }
 
 /* --------------------------------------------------------------------------
    Menu overlay (full-screen takeover)
