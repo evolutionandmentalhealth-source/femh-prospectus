@@ -2106,6 +2106,13 @@ p:last-child { margin-bottom: 0; }
     gap: 14px;
     padding: 2px 20px 18px;
   }
+  /* Reset the explicit grid placements from the 900px breakpoint so the
+     description and outcomes box stack vertically in a single column. */
+  .folder-expand-inner > p,
+  .folder-expand-inner > .outcomes {
+    grid-column: 1;
+    grid-row: auto;
+  }
   .folder-expand-divider { margin: 0 20px; }
   /* Force all tabs to the left at mobile widths. */
   .folder.tab-o1 .folder-tab,
