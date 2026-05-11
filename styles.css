@@ -258,10 +258,13 @@ p:last-child { margin-bottom: 0; }
   background: rgba(255,255,255,0.92);
   backdrop-filter: saturate(140%) blur(12px);
   -webkit-backdrop-filter: saturate(140%) blur(12px);
-  border-bottom: 1px solid transparent;
+  /* Always-visible hairline at the bottom — picks up the FEMH ink at very
+     low opacity so it reads as a quiet editorial divider, not a hard rule.
+     Gets slightly stronger on scroll to mark the page state change. */
+  border-bottom: 1px solid rgba(11, 42, 38, 0.08);
   transition: border-color var(--dur-med) var(--ease-standard), background var(--dur-med) var(--ease-standard);
 }
-.site-nav.is-scrolled { border-bottom-color: var(--border); }
+.site-nav.is-scrolled { border-bottom-color: rgba(11, 42, 38, 0.14); }
 .nav-inner {
   max-width: var(--container-wide);
   margin: 0 auto;
