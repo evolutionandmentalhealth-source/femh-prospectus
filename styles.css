@@ -302,6 +302,9 @@ p:last-child { margin-bottom: 0; }
   color: var(--femh-forest);
   margin-top: 1px;
 }
+/* Default (desktop): line 2 flows inline within the tagline so the whole
+   foundation name reads as a single line of caps below "Prospectus". */
+.nav-name span.nav-line2 { display: inline; margin-top: 0; }
 .nav-links {
   display: flex;
   align-items: center;
@@ -401,8 +404,24 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 720px) {
   .nav-inner { padding: 0 20px; gap: 12px; }
-  .nav-name { font-size: 15px; }
+  .nav-name { font-size: 15px; white-space: normal; }
   .nav-name span { font-size: 9px; }
+  /* On narrow screens the full foundation name overlaps the menu button if
+     it stays on a single line below "Prospectus". Instead, inline the tagline
+     next to "Prospectus" with a · separator, and push "Evolution and Mental
+     Health" onto the second line. Two-line nav, same height as before. */
+  .nav-name > .nav-tagline {
+    display: inline;
+    margin-top: 0;
+  }
+  .nav-name > .nav-tagline::before {
+    content: "·";
+    margin: 0 6px;
+    color: var(--femh-sage);
+    font-size: 13px;
+    vertical-align: baseline;
+  }
+  .nav-name span.nav-line2 { display: block; }
   .nav-link { display: none; }
   .nav-cta { padding: 8px 14px; font-size: 11px; }
 }
