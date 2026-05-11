@@ -1735,7 +1735,7 @@ p:last-child { margin-bottom: 0; }
 
 /* The map-band is now the first content under the nav — clear the sticky nav
    height with breathing room above the heading. */
-.map-band { padding-top: calc(var(--nav-h) + var(--space-7)); }
+.map-band { padding-top: calc(var(--nav-h) + var(--space-5)); }
 
 /* ==========================================================================
    Folder drawer — project map (new accordion menu, May 2026)
