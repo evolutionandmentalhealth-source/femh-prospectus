@@ -1672,36 +1672,9 @@ p:last-child { margin-bottom: 0; }
   html { scroll-behavior: auto; }
 }
 
-/* ==========================================================================
-   Page intro — compact eyebrow + one-line lead above the folder drawer.
-   Replaces the previous full-bleed hero. Sized so the drawer is visible
-   above the fold on a 14"+ laptop screen.
-   ========================================================================== */
-.page-intro {
-  padding: calc(var(--nav-h) + var(--space-6)) 0 var(--space-5);
-  background: var(--bg-paper, var(--femh-white));
-  border-bottom: 1px solid var(--border);
-}
-.page-intro-inner {
-  max-width: 720px;
-}
-.page-intro .eyebrow {
-  color: var(--femh-sage);
-}
-.page-intro-lead {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(18px, 2.4vw, 22px);
-  line-height: 1.4;
-  color: var(--femh-ink);
-  letter-spacing: -0.005em;
-  margin: 14px 0 0;
-  text-wrap: pretty;
-}
-
-/* The map-band sits directly under the intro now — tighten its top padding so
-   the drawer rises closer to the fold. */
-.map-band { padding-top: var(--space-7); }
+/* The map-band is now the first content under the nav — clear the sticky nav
+   height with breathing room above the heading. */
+.map-band { padding-top: calc(var(--nav-h) + var(--space-7)); }
 
 /* ==========================================================================
    Folder drawer — project map (new accordion menu, May 2026)
