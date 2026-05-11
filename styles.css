@@ -698,6 +698,39 @@ p:last-child { margin-bottom: 0; }
 .why-body p em { font-style: italic; }
 .why-body h2 { color: var(--fg-on-dark); margin-bottom: var(--space-5); font-weight: 400; }
 
+/* "Companion report" subnote — sits at the foot of the Why-fund-us prose,
+   set off with a cream hairline and a small caps label. The link inside is
+   forced to cream so it reads against the forest-green band. */
+.why-companion {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(247, 244, 236, 0.18);
+}
+.why-companion-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 236, 0.55);
+  margin-bottom: 8px;
+}
+.why-companion p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--fg-on-dark-2);
+  margin: 0;
+}
+.why-companion a {
+  color: var(--fg-on-dark);
+  text-decoration: underline;
+  text-decoration-color: rgba(247, 244, 236, 0.45);
+  text-underline-offset: 3px;
+}
+.why-companion a:hover {
+  text-decoration-color: var(--fg-on-dark);
+}
+
 /* --------------------------------------------------------------------------
    Project map — index of all 17
    -------------------------------------------------------------------------- */
