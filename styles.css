@@ -1351,6 +1351,21 @@ p:last-child { margin-bottom: 0; }
     margin-top: 4px;
     font-size: 15px;
   }
+  /* The desktop "At full scale" column header is hidden at this breakpoint,
+     so add a small inline label above each vision sentence to make it clear
+     what the italic text represents. */
+  .outcome-vision::before {
+    content: "At full scale";
+    display: block;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--femh-sage);
+    margin-bottom: 4px;
+  }
 }
 
 /* See-report — subtle "Further reading in the report" pointer */
