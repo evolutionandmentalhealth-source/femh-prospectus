@@ -32,3 +32,10 @@ figures-inline/
 
 # Photo assets — not used by the prospectus (logos only)
 assets/photos/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
