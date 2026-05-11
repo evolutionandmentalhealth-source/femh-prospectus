@@ -1816,8 +1816,8 @@ p:last-child { margin-bottom: 0; }
   height: var(--tab-h);
   min-width: 0;
   padding: 0 14px;
-  background: var(--femh-sage);
-  color: var(--femh-cream);
+  background: #E6BE93;
+  color: var(--femh-ink);
   font-family: var(--font-serif);
   font-weight: 600;
   font-size: 11px;
@@ -2079,8 +2079,15 @@ p:last-child { margin-bottom: 0; }
               0 22px 38px -22px rgba(11, 42, 38, 0.55),
               0 8px 14px -10px rgba(11, 42, 38, 0.28);
 }
-.folder:hover .folder-tab,
-.folder.is-open .folder-tab {
+/* Project-focussed tabs darken on hover (warm peach -> deeper tan).
+   Person-focussed tabs keep their existing teal hover for contrast. */
+.folder--project:hover .folder-tab,
+.folder--project.is-open .folder-tab {
+  background: #D1A371;
+  color: var(--femh-ink);
+}
+.folder--person:hover .folder-tab,
+.folder--person.is-open .folder-tab {
   background: var(--femh-teal);
   color: #fff;
 }
