@@ -1,0 +1,28 @@
+# Cloudflare Pages headers — applied at the edge, no rebuild needed when changed.
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: SAMEORIGIN
+
+# Long cache for static assets (logos, photos)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS and JS — short cache during active editing.
+# Restore to long cache + ?v= versioning once the prospectus is stable.
+/styles.css
+  Cache-Control: public, max-age=300, must-revalidate
+/print.css
+  Cache-Control: public, max-age=300, must-revalidate
+/app.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+# The HTML itself — short cache so edits propagate fast
+/index.html
+  Cache-Control: public, max-age=300, must-revalidate
+/
+  Cache-Control: public, max-age=300, must-revalidate

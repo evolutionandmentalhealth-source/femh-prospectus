@@ -1,0 +1,34 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Office lock / temporary files
+~$*.docx
+~$*.doc
+~$*.xlsx
+
+# Claude / agent state
+.claude/
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.pyc
+
+# Source materials we don't ship to the public site
+# (kept locally; the deployed site only needs index.html, styles.css, print.css, app.js, assets/)
+FEMH Living List of Projects v2.docx
+FEMH Living List of Projects v2.md
+EDIT.md
+EDIT_AH.md
+Claude FEMH Report Design/
+
+# Orphan figure snippets — not referenced by the prospectus index.html
+figures-inline/
+
+# Photo assets — not used by the prospectus (logos only)
+assets/photos/

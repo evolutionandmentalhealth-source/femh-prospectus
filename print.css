@@ -1,0 +1,299 @@
+/* ==========================================================================
+   FEMH Project File — print stylesheet
+   Produces a clean A4/Letter PDF when the user hits Cmd/Ctrl+P.
+   ========================================================================== */
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+}
+
+@media print {
+
+  /* Reset surfaces and shadows */
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  /* Hide interactive chrome */
+  .site-nav,
+  .menu-overlay,
+  .filter-chips,
+  .back-to-map,
+  .no-results,
+  .nav-cta,
+  .nav-menu-btn,
+  .tile-arrow,
+  .cta-actions {
+    display: none !important;
+  }
+
+  main { padding-top: 0 !important; }
+
+  /* No fancy hover/transform/shadow */
+  *, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Page-level layout */
+  .container, .container-narrow, .container-wide {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Hero — keep as cover-ish */
+  .hero {
+    padding: 0 !important;
+    page-break-after: always;
+    break-after: page;
+  }
+  .hero-watermark { display: none !important; }
+  .hero-display {
+    font-size: 56pt !important;
+    color: #0F4A44 !important;
+    margin-bottom: 12pt !important;
+  }
+  .hero-display em { color: #0B2A26 !important; }
+  .hero-eyebrow { color: #0F4A44 !important; font-size: 9pt !important; }
+  .hero-lead { font-size: 14pt !important; color: #2E4743 !important; }
+  .hero-companion { color: #6B7F7B !important; }
+  .hero-companion a { color: #0F4A44 !important; border-bottom: none !important; }
+
+  /* Why fund us — print as light section */
+  .why-band {
+    background: #fff !important;
+    color: #000 !important;
+    padding: 16pt 0 !important;
+    page-break-after: always;
+    break-after: page;
+  }
+  .why-band::before { display: none !important; }
+  .why-body h2,
+  .why-body p,
+  .why-stat .num,
+  .why-stat .label,
+  .why-side .eyebrow {
+    color: #0B2A26 !important;
+  }
+  .why-stat { border-color: #D9D9D6 !important; }
+  .why-stat .num { color: #0F4A44 !important; }
+
+  /* Map — print as a compact contents list */
+  .map-band { background: #fff !important; padding: 0 !important; }
+  .map-grid { gap: 6pt !important; grid-template-columns: 1fr 1fr !important; }
+  .tile {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #D9D9D6 !important;
+    padding: 12pt !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    page-break-inside: avoid;
+  }
+  .tile.is-person {
+    background: #F7F4EC !important;
+    color: #0B2A26 !important;
+    border-color: #0F4A44 !important;
+  }
+  .tile.is-person .tile-num,
+  .tile.is-person .tile-title,
+  .tile.is-person .tile-focus,
+  .tile.is-person .tile-cost,
+  .tile.is-person .tile-cost b {
+    color: #0B2A26 !important;
+  }
+  .tile-arrow { display: none !important; }
+
+  /* Section dividers */
+  .section-divider {
+    background: #fff !important;
+    color: #000 !important;
+    padding: 18pt 0 !important;
+    page-break-before: always;
+    break-before: page;
+  }
+  .section-divider h2,
+  .section-divider .label,
+  .section-divider .lead {
+    color: #0B2A26 !important;
+  }
+  .section-divider .label { color: #0F4A44 !important; }
+
+  /* Project cards — one per page where possible */
+  .project-stack, .person-stack {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+  .person-stack::before { display: none !important; }
+  .project-card {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #D9D9D6 !important;
+    box-shadow: none !important;
+    padding: 14pt !important;
+    margin: 0 0 10pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: always;
+    break-after: page;
+  }
+  .project-card::after { display: none !important; }
+  .project-card.is-person {
+    background: #F7F4EC !important;
+    border-color: #0F4A44 !important;
+  }
+  .project-card.is-person *,
+  .project-card.is-person h2,
+  .project-card.is-person .card-title,
+  .project-card.is-person .body-prose,
+  .project-card.is-person .body-prose p {
+    color: #0B2A26 !important;
+  }
+  .project-card.is-person .stat-strip { background: #fff !important; border-color: #D9D9D6 !important; }
+  .project-card.is-person .stat-strip .stat { border-right-color: #D9D9D6 !important; }
+  .project-card.is-person .outcomes-list {
+    background: #fff !important;
+    border-color: #D9D9D6 !important;
+  }
+  .project-card.is-person .outcomes-list li { border-bottom-color: #D9D9D6 !important; }
+
+  /* Card heads */
+  .card-eyebrow,
+  .card-eyebrow .num,
+  .block-eyebrow {
+    color: #0F4A44 !important;
+  }
+  .card-title { color: #0B2A26 !important; font-size: 22pt !important; }
+  .card-tag { background: #E8EFEE !important; color: #0F4A44 !important; }
+
+  /* Quick facts */
+  .quick-facts {
+    background: #F7F4EC !important;
+    border-color: #D9D9D6 !important;
+    page-break-inside: avoid;
+  }
+  .qf .qf-label { color: #6B7F7B !important; }
+  .qf .qf-value { color: #0B2A26 !important; }
+  .qf .qf-value.qf-focus { color: #0F4A44 !important; }
+
+  /* Stat strip */
+  .stat-strip { border-color: #D9D9D6 !important; }
+  .stat-strip .stat .stat-num { color: #0B2A26 !important; }
+  .stat-strip .stat .stat-num em { color: #0F4A44 !important; }
+  .stat-strip .stat .stat-cap { color: #2E4743 !important; }
+  .stat-strip .stat .stat-source { color: #0F4A44 !important; border: none !important; }
+  .stat-strip .stat .stat-source::after { content: "" !important; }
+
+  /* Outcomes list (single-column, used by person-focussed cards) */
+  .outcomes-list {
+    background: #F7F4EC !important;
+    border-color: #D9D9D6 !important;
+    page-break-inside: avoid;
+  }
+  .outcomes-list li { border-bottom-color: #D9D9D6 !important; padding: 10pt 12pt !important; }
+  .outcomes-list li::before {
+    background-image: url("assets/logo/femh-symbol-forest.png") !important;
+    width: 22px !important; height: 22px !important;
+  }
+  .outcomes-list li p { color: #0B2A26 !important; }
+
+  /* Two-column outcomes block (project-focussed cards) — collapse to stacked rows for print */
+  .outcomes-block {
+    background: #F7F4EC !important;
+    border: 1px solid #D9D9D6 !important;
+    border-top: 3px solid #0F4A44 !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+  .outcomes-block-head { display: none !important; }
+  .outcomes-rows { list-style: none; margin: 0; padding: 0; }
+  .outcomes-row {
+    display: grid !important;
+    grid-template-columns: 18pt 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 4pt 8pt !important;
+    padding: 10pt 12pt !important;
+    border-bottom: 1px solid #D9D9D6 !important;
+    page-break-inside: avoid;
+  }
+  .outcomes-row::before {
+    content: "";
+    background-image: url("assets/logo/femh-symbol-forest.png") !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 18pt !important;
+    height: 18pt !important;
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: start;
+  }
+  .outcomes-arrow { display: none !important; }
+  .outcome-product {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    color: #0B2A26 !important;
+    margin: 0 !important;
+    font-family: var(--font-sans) !important;
+  }
+  .outcome-vision {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    color: #0F4A44 !important;
+    font-family: var(--font-serif) !important;
+    font-style: italic !important;
+    border-left: 1.5pt solid #0F4A44 !important;
+    padding-left: 8pt !important;
+    margin: 4pt 0 0 !important;
+  }
+
+  /* Body prose */
+  .body-prose, .body-prose p { color: #0B2A26 !important; }
+
+  /* Show URLs after links — only on body prose, not on stat sources or nav */
+  .body-prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #6B7F7B;
+    word-break: break-all;
+  }
+
+  /* CTA — small print-only summary, not the big hero */
+  .cta-band {
+    background: #fff !important;
+    color: #000 !important;
+    padding: 16pt 0 !important;
+    page-break-before: always;
+  }
+  .cta-band::after { display: none !important; }
+  .cta-band h2, .cta-band .lead { color: #0B2A26 !important; }
+  .cta-band .eyebrow { color: #0F4A44 !important; }
+
+  /* Footer — keep subtle */
+  .site-footer {
+    background: #fff !important;
+    color: #6B7F7B !important;
+    border-top: 1px solid #D9D9D6;
+    padding: 10pt 0 !important;
+  }
+  .footer-brand img { display: none !important; }
+  .footer-brand .footer-name,
+  .footer-meta,
+  .footer-meta a {
+    color: #0B2A26 !important;
+  }
+
+  /* Avoid orphans / widows in body text */
+  p { orphans: 3; widows: 3; }
+  h2, h3, h4 { page-break-after: avoid; break-after: avoid; }
+
+  /* Keep card sub-blocks together where possible */
+  .card-block { page-break-inside: avoid; break-inside: avoid; }
+}
